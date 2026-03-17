@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal website of Your Name – developer, creator, and lifelong learner." />
+  <title>Your Name | Personal Website</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#hero">YN</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Your Name</h1>
+      <p class="hero-tagline">Software Engineer &amp; Creative Problem Solver</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="mailto:you@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll to About">
+      <i class="fa-solid fa-angles-down"></i>
+    </a>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-avatar">
+          <img src="assets/avatar.jpg" alt="Photo of Your Name" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="avatar-placeholder" style="display:none;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>
+            Hi! I'm <strong>Your Name</strong>, a passionate software engineer based in
+            <strong>Your City, Country</strong>. I love building elegant, performant web
+            applications and digging into challenging problems.
+          </p>
+          <p>
+            When I'm not coding, you'll find me hiking, reading sci-fi novels, or
+            experimenting with new programming languages. I'm always looking for
+            opportunities to collaborate on interesting projects.
+          </p>
+          <a href="assets/resume.pdf" class="btn btn-primary" download>
+            <i class="fa-solid fa-download"></i> Download Résumé
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <i class="fa-brands fa-html5 skill-icon" style="color:#e34c26;"></i>
+          <h3>HTML &amp; CSS</h3>
+          <p>Semantic markup, Flexbox, CSS Grid, responsive design, and accessibility.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-js skill-icon" style="color:#f7df1e;"></i>
+          <h3>JavaScript / TypeScript</h3>
+          <p>ES2022+, async/await, React, Vue, and Node.js ecosystem.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-python skill-icon" style="color:#3572A5;"></i>
+          <h3>Python</h3>
+          <p>Django, FastAPI, data analysis with pandas &amp; NumPy, scripting.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-database skill-icon" style="color:#4479A1;"></i>
+          <h3>Databases</h3>
+          <p>PostgreSQL, MySQL, MongoDB, Redis caching, and ORM design.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-docker skill-icon" style="color:#0db7ed;"></i>
+          <h3>DevOps</h3>
+          <p>Docker, CI/CD pipelines, GitHub Actions, Linux server administration.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-cloud skill-icon" style="color:#FF9900;"></i>
+          <h3>Cloud</h3>
+          <p>AWS (EC2, S3, Lambda), Azure basics, serverless architectures.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-folder-open"></i>
+            <div class="project-links">
+              <a href="https://github.com/yourusername/project-one" target="_blank" rel="noopener" aria-label="Source code"><i class="fa-brands fa-github"></i></a>
+              <a href="https://project-one.example.com" target="_blank" rel="noopener" aria-label="Live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3>Project One</h3>
+          <p>A full-stack web application that helps users manage their daily tasks with real-time collaboration features.</p>
+          <div class="project-tags">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-folder-open"></i>
+            <div class="project-links">
+              <a href="https://github.com/yourusername/project-two" target="_blank" rel="noopener" aria-label="Source code"><i class="fa-brands fa-github"></i></a>
+              <a href="https://project-two.example.com" target="_blank" rel="noopener" aria-label="Live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3>Project Two</h3>
+          <p>A machine-learning pipeline that classifies images in real time using a custom-trained convolutional neural network.</p>
+          <div class="project-tags">
+            <span>Python</span><span>TensorFlow</span><span>Docker</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-folder-open"></i>
+            <div class="project-links">
+              <a href="https://github.com/yourusername/project-three" target="_blank" rel="noopener" aria-label="Source code"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Project Three</h3>
+          <p>An open-source CLI tool for automating repetitive development workflows, published on npm with 500+ weekly downloads.</p>
+          <div class="project-tags">
+            <span>TypeScript</span><span>Node.js</span><span>CLI</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-folder-open"></i>
+            <div class="project-links">
+              <a href="https://github.com/yourusername/project-four" target="_blank" rel="noopener" aria-label="Source code"><i class="fa-brands fa-github"></i></a>
+              <a href="https://project-four.example.com" target="_blank" rel="noopener" aria-label="Live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3>Project Four</h3>
+          <p>A mobile-first e-commerce platform with Stripe integration, server-side rendering, and a 95+ Lighthouse score.</p>
+          <div class="project-tags">
+            <span>Next.js</span><span>Stripe</span><span>Tailwind CSS</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <ol class="timeline">
+
+        <li class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Jan 2023 – Present</span>
+            <h3>Senior Software Engineer</h3>
+            <h4>Company Name &mdash; City, Country</h4>
+            <ul>
+              <li>Led the migration of a monolithic Rails app to microservices, reducing deployment time by 40%.</li>
+              <li>Mentored a team of 4 junior engineers through code reviews and pair programming sessions.</li>
+              <li>Designed and shipped a real-time notification service handling 1M+ events/day.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Jun 2020 – Dec 2022</span>
+            <h3>Software Engineer</h3>
+            <h4>Another Company &mdash; City, Country</h4>
+            <ul>
+              <li>Built and maintained REST APIs consumed by 50k+ daily active users.</li>
+              <li>Integrated third-party payment providers, improving checkout conversion by 12%.</li>
+              <li>Improved test coverage from 45% to 85% using Jest and Cypress.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Sep 2016 – Jun 2020</span>
+            <h3>B.Sc. Computer Science</h3>
+            <h4>University Name &mdash; City, Country</h4>
+            <ul>
+              <li>Graduated with First-Class Honours (GPA 3.9 / 4.0).</li>
+              <li>Thesis: <em>"Optimising Graph Traversal Algorithms for Social Network Analysis"</em>.</li>
+            </ul>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section" id="contact">
+    <div class="container contact-container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-intro">
+        I'm currently open to new opportunities. Whether you have a question, a project idea,
+        or just want to say hi — my inbox is always open!
+      </p>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          <span class="field-error" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          <span class="field-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="6" placeholder="Tell me about your project…" required></textarea>
+          <span class="field-error" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="mailto:you@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

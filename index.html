@@ -1,11 +1,424 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Xuzhiyu</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhiyu Xu</title>
+  <style>
+    :root {
+      --text: #222;
+      --muted: #5f6673;
+      --line: #e1e5ea;
+      --link: #1f5aa6;
+      --soft: #f6f8fb;
+      --accent: #7a2f3b;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.58;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 56px;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 56px;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 34px;
+      align-items: start;
+      padding-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.16;
+    }
+
+    h2 {
+      margin: 34px 0 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+      font-size: 22px;
+      font-weight: 650;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .portrait {
+      width: 180px;
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(122, 47, 59, 0.13), rgba(31, 90, 166, 0.12)),
+        var(--soft);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 46px;
+      font-weight: 600;
+    }
+
+    .profile-sidebar {
+      width: 220px;
+    }
+
+    .portrait::after {
+      content: attr(data-fallback);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .profile-location {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .profile-links {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .profile-links a,
+    .profile-links > span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #3f454d;
+    }
+
+    .profile-links .icon,
+    .profile-location .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #000;
+      font-weight: 700;
+    }
+
+    .profile-links svg,
+    .profile-location svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex: 0 0 auto;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .interests {
+      margin-top: 16px;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 158px 1fr;
+      gap: 18px;
+      margin: 16px 0;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 14px;
+      padding-top: 2px;
+    }
+
+    .title {
+      font-weight: 650;
+    }
+
+    .meta {
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .publication {
+      margin: 16px 0;
+    }
+
+    .publication .venue {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .footer {
+      margin-top: 38px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+        gap: 8px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 12px;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        width: 142px;
+      }
+
+      .profile-sidebar {
+        width: 100%;
+      }
+
+      .entry {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+  </style>
+</head>
 <body>
-  <h1>Hello, I'm Xuzhiyu</h1>
-  <p>This is my GitHub homepage.</p>
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#">Home</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#internships">Internships</a>
+        <a href="#awards">Awards</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="intro">
+      <div class="profile-sidebar">
+        <div class="portrait" aria-label="Zhiyu Xu photo">
+          <img src="me.png" alt="Zhiyu Xu" onerror="this.style.display='none'; this.parentElement.dataset.fallback='ZX'">
+        </div>
+        <div class="profile-location">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          </span>
+          Beijing
+        </div>
+        <div class="profile-links" aria-label="Profile links">
+          <a href="mailto:zhiyu_xu@stu.pku.edu.cn"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25-7.07 4.42a1 1 0 0 1-1.06 0L4.4 8.25V6.5L12 11.25l7.6-4.75v1.75z"/></svg></span>Email</a>
+          <a href="https://scholar.google.com/citations?user=ixPykfsAAAAJ&amp;hl=zh-CN&amp;authuser=1"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 14.25L5.5 13.7V17c0 1.75 2.91 3.25 6.5 3.25s6.5-1.5 6.5-3.25v-3.3L12 17.25z"/></svg></span>Google Scholar</a>
+          <a href="https://github.com/zhiyu-xu-xiao"><span class="icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.67 0 8.2c0 3.63 2.29 6.7 5.47 7.79.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.51-2.01.38-2.53-.5-2.69-.96-.09-.24-.48-.96-.82-1.16-.28-.16-.68-.55-.01-.56.63-.01 1.08.59 1.23.83.72 1.24 1.87.89 2.33.68.07-.53.28-.89.51-1.09-1.78-.21-3.64-.91-3.64-4.04 0-.89.31-1.62.82-2.19-.08-.21-.36-1.04.08-2.16 0 0 .67-.22 2.2.84A7.43 7.43 0 0 1 8 4.01c.68 0 1.36.09 2 .27 1.53-1.06 2.2-.84 2.2-.84.44 1.12.16 1.95.08 2.16.51.57.82 1.3.82 2.19 0 3.14-1.87 3.83-3.65 4.04.29.26.54.75.54 1.52 0 1.09-.01 1.97-.01 2.24 0 .21.15.47.55.39A8.14 8.14 0 0 0 16 8.2C16 3.67 12.42 0 8 0z"/></svg></span>GitHub</a>
+        </div>
+      </div>
+      <div>
+        <h1>Zhiyu Xu</h1>
+        <p>
+          I am a second-year Ph.D. student at the
+          <a href="https://lancopku.github.io/">Language Computing and Machine Learning Group (LANCO)</a>,
+          <a href="https://cs.pku.edu.cn/English/People/Faculty/By_Institute/Institute_of_Computational_Linguistics.htm">Institute of Computational Linguistics (ICL)</a>,
+          <a href="https://cs.pku.edu.cn/">School of Computer Science</a>,
+          <a href="https://english.pku.edu.cn/">Peking University</a>,
+          advised by Prof. <a href="https://xusun26.github.io/">Xu Sun</a>.
+        </p>
+        <p>
+          Prior to this, I received my B.Eng. degree in Data Science and Big Data
+          Technology from Tongji University in 2024.
+        </p>
+        <p>
+          My research interests include multimodal large language models, video
+          understanding, and multimodal agents.
+        </p>
+        <p>
+          I am actively seeking research <strong>internship</strong> opportunities focused on
+          multimodal large language models. I am also open to research collaborations in related areas.
+          Please feel free to contact me at
+          <a href="mailto:zhiyu_xu@stu.pku.edu.cn">zhiyu_xu@stu.pku.edu.cn</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="publication">
+        <div class="title">Investigating Cross-Modal Skill Injection: Scenarios, Methods, and Hyperparameters</div>
+        <div>Zhiyu Xu, Lean Wang, Yuanxin Liu, Lei Li, Hao Zhou, Fandong Meng, Jie Zhou, and Xu Sun</div>
+        <div class="venue">ACL 2026 Main Conference.</div>
+      </div>
+      <div class="publication">
+        <div class="title">AdaRisk: Risk-Adaptive Deep Reinforcement Learning for Vulnerable Nodes Detection</div>
+        <div>Fan Li, Zhiyu Xu, Dawei Cheng, and Xiaoyang Wang</div>
+        <div class="venue">IEEE TKDE 2024.</div>
+      </div>
+      <div class="publication">
+        <div class="title">Does Explicit Reasoning Help in Finance? A Study of Chain-of-Thought for Financial NLP</div>
+        <div>Ziyue Wang, Zhiyu Xu, Yi Liu, Yuxiang Wang, Ruihan Bao, Keiko Harimoto, and Xu Sun</div>
+        <div class="venue">AFA Workshop @ ICLR 2026.</div>
+      </div>
+      <div class="publication">
+        <div class="title">Modeling Interactions Between Stocks Using LLM-Enhanced Graphs for Volume Prediction</div>
+        <div>Zhiyu Xu, Yi Liu, Yuchi Wang, Ruihan Bao, Keiko Harimoto, and Xu Sun</div>
+        <div class="venue">FinNLP-FNP-LLMFinLegal Workshop @ COLING 2025.</div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="date">2024.09 - Present</div>
+        <div>
+          <div class="title">Ph.D. Student, School of Computer Science</div>
+          <div class="meta">Peking University | Institute of Computational Linguistics | LANCO Lab</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="date">2020.09 - 2024.06</div>
+        <div>
+          <div class="title">B.Eng., Data Science and Big Data Technology</div>
+          <div class="meta">College of Electronic and Information Engineering, Tongji University</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="internships">
+      <h2>Internships</h2>
+      <div class="entry">
+        <div class="date">2024 - 2025</div>
+        <div>
+          <div class="title">Research Intern</div>
+          <div class="meta">Tencent AI Lab</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="date">2023 - 2024</div>
+        <div>
+          <div class="title">Intern</div>
+          <div class="meta">Mizuho Securities Co., Ltd.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Awards</h2>
+      <div class="entry">
+        <div class="date">2024.06</div>
+        <div>
+          <div class="title">Shanghai Outstanding Graduate</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="date">2022.12</div>
+        <div>
+          <div class="title">Second Place, CCF Big Data and Computing Intelligence Contest</div>
+          <div class="meta">Multimodal Dialogue Scene and Topic Shift Understanding Track</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="date">2021.12</div>
+        <div>
+          <div class="title">National Scholarship for Undergraduates</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      &copy; 2026 Zhiyu Xu. Last updated: May 13, 2026.
+    </footer>
+  </main>
 </body>
 </html>
